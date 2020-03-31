@@ -1,0 +1,13 @@
+flask
+flask_sqlalchemy
+psycopg2-binary
+flask_script
+Flask-Migrate
+flask-apispec
+apispec
+flask-jwt-extended
+python-dateutil
+ipython
+requests
+passlib
+bcrypt

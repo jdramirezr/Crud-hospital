@@ -1,0 +1,24 @@
+version: '3.1'
+services:
+    db:
+      image: postgres
+      restart: always
+      container_name: postgres
+      env_file: databese.conf
+      ports:
+        - 5432:5432
+    adminer:
+      image: adminer
+      restart: always
+      ports:
+        - 8080:8080
+    web:
+      build:
+        context: ./api
+        dockerfile: dockerfile
+      ports:
+        - '8888:8888'
+      volumes:
+        - ./api:/app
+      depends_on:
+        - db
